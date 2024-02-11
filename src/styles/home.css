@@ -4,37 +4,38 @@
 }
 
 .poster-section {
-  background-image: url("../assets/images/newposter.jpg");
-  background-size: cover;
-  background-position: center;
-  object-fit: cover;
-  min-height: 550px;
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  min-height: 450px;
+}
+.poster-section.lightmode{
+  background-image: url('../assets/images/bg-poster.png'), linear-gradient(to right top, #0089ff, #00a2ff, #00b8ff, #42ccfc, #7bdef7);;
+}
+.poster-section.darkmode{
+  background-image: url('../assets/images/bg-poster.png'), linear-gradient(to right top, #012252, #101d45, #151839, #16132e, #150e23);
 }
 
 .overlay {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 5%;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.overlay-lightmode{
-  background-color: rgba(255,255,255, 0.3);
-}
-.overlay-darkmode{
-  background-color: rgba(0, 0, 0, 0.3);
+.overlay .float-section{
+  left: 75%;
+  bottom: 10px;
 }
 .floating {
   animation-name: floating;
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-  margin-left: 30px;
-  margin-top: 5px;
 }
 
 @keyframes floating {

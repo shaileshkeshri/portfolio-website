@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes, faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../assets/images/newlogo.png";
 import SwitchTheme from "./theme";
+import { Link } from "react-router-dom";
 
 interface HeaderProps {
   darkModeHandler?: (isDarkMode: boolean) => void;
@@ -14,8 +15,8 @@ const Header: React.FC<HeaderProps> = ({darkModeHandler, additonalClass}:HeaderP
   const [isHeaderFixed, setHeaderFixed] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
 
-  const headerBgColor = darkMode ? "bg-slate-950" : "bg-slate-100";
-  const headerTextColor = darkMode ? "text-amber-200" : "text-red-900";
+  const headerBgColor = darkMode ? "bg-black" : "bg-white";
+  const headerTextColor = darkMode ? "text-sky-100" : "text-blue-600";
   const hoverTextColor = darkMode ? "hover:text-blue-500" : "hover:text-gray-900";
 
   const toggleDarkMode = () => {
@@ -71,33 +72,33 @@ const Header: React.FC<HeaderProps> = ({darkModeHandler, additonalClass}:HeaderP
             </button>
           </div>
           <nav className={`md:flex hidden space-x-4 items-center`}>
-            <a href="#home" className={`text-xl font-medium ${hoverTextColor}`}>
+            <Link to="/" className={`text-lg font-medium ${hoverTextColor}`}>
               Home
-            </a>
-            <a href="#about" className={`text-xl font-medium ${hoverTextColor}`}>
+            </Link>
+            <Link to="/about" className={`text-lg font-medium ${hoverTextColor}`}>
               About
-            </a>
-            <a href="#portfolio" className={`text-xl font-medium ${hoverTextColor}`}>
+            </Link>
+            <Link to="/portfolio" className={`text-lg font-medium ${hoverTextColor}`}>
               Portfolio
-            </a>
-            <a href="#contact" className={`text-xl font-medium ${hoverTextColor}`}>
+            </Link>
+            <Link to="/contact" className={`text-lg font-medium ${hoverTextColor}`}>
               Contact
-            </a>
+            </Link>
           </nav>
           <div className={`md:hidden absolute w-full h-screen top-18 right-0 z-20 ${darkMode?'bg-gray-900': 'bg-white'} ${isMenuOpen ? "block" : "hidden"}`}>
             <nav className="flex flex-col items-end space-y-4 py-4 px-6">
-              <a href="#home" className={`text-xl font-medium ${hoverTextColor}`}>
+              <Link to="/" className={`text-xl font-medium ${hoverTextColor}`}>
                 Home
-              </a>
-              <a href="#about" className={`text-xl font-medium ${hoverTextColor}`}>
+              </Link>
+              <Link to="/about" className={`text-xl font-medium ${hoverTextColor}`}>
                 About
-              </a>
-              <a href="#portfolio" className={`text-xl font-medium ${hoverTextColor}`}>
+              </Link>
+              <Link to="/portfolio" className={`text-xl font-medium ${hoverTextColor}`}>
                 Portfolio
-              </a>
-              <a href="#contact" className={`text-xl font-medium ${hoverTextColor}`}>
+              </Link>
+              <Link to="/contact" className={`text-xl font-medium ${hoverTextColor}`}>
                 Contact
-              </a>
+              </Link>
             </nav>
           </div>
           <div className="hidden md:flex">
